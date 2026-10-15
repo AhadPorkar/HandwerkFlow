@@ -1,0 +1,1 @@
+import{describe,it,expect}from'vitest';import{dictionary,stages,statusLabel}from'./i18n';describe('translations',()=>{it('covers each English key in German',()=>{expect(Object.keys(dictionary.de).sort()).toEqual(Object.keys(dictionary.en).sort());});it('translates lifecycle',()=>{for(const stage of stages)expect(statusLabel('de',stage)).not.toBe(stage);});});

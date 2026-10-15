@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: handwerkflow
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/handwerkflow}
+    username: ${DB_USER:handwerk}
+    password: ${DB_PASSWORD:local_only}
+  flyway:
+    enabled: true
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: true
+server:
+  port: ${PORT:8080}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+app:
+  admin-user: ${ADMIN_USER:admin}
+  admin-password: ${ADMIN_PASSWORD:}
+  allowed-origin: ${ALLOWED_ORIGIN:http://localhost:5173}
